@@ -8,8 +8,8 @@
 
 size_t	ft_strlen(const char	*str);
 size_t	ft_putchar(char	c);
-void	ft_putstr(const char	*str);
-//size_t	ft_check_var(va_list ap, int c);
-void	putbase(unsigned long long nb, char *base);
+size_t	ft_putstr(const char	*str);
+size_t	ft_check_var(va_list ap, int c);
+size_t	ft_putnb(unsigned long long nb);
 
 #endif
