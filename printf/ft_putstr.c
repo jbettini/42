@@ -4,10 +4,8 @@ size_t	ft_putstr(const char	*str)
 {
 	int i;
 
-	i = -1;
-	while(str[i])
-	{
-		i++;
-	}
-	return (write(1, &str[i], 1));
+	i = 0;
+	while (str)
+		return (write(1, str, ft_strlen(str)));
+	return (write(1, "(null)", 6));
 }

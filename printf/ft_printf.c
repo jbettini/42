@@ -16,23 +16,9 @@ int ft_printf(const char * str, ...)
 		if (str[i] == '%')
 			j += ft_check_var(ap, str[++i]);
 		else
-			write(1, &str[i], 1);
+			j += write(1, &str[i], 1);
 		i++;
 	}
 	va_end(ap);
 	return (j);
-}
-
-int main()
-{
-	int	c;
-	unsigned long long	d;
-
-	d = (int) "42";
-	c = 'c';
-	ft_printf("____Printf____\n", "");
-	ft_printf("ceci est le char %c", c);
-	ft_printf("ceci est le nb |%d|", d);
-	ft_printf("___end___\n" "");
-	return (0);
 }

@@ -1,16 +1,17 @@
 #include "ft_printf.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 int main()
 {
-	int	c;
-	unsigned long long	d;
+	char	c;
+	char	*str;
 
-	d = (int) "42";
+	str = "allo la terre\n";
 	c = 'c';
-	ft_printf("____Printf____\n", "");
-	ft_printf("ceci est le char %c", c);
-	ft_printf("ceci est le nb |%d|", d);
-	ft_printf("___end___\n" "");
+	printf("____Printf____\n");
+	//ft_printf("ceci est le char %c", c);
+	ft_printf("ceci est le nb |%d|", c);
+	ft_printf("ceci est le str |%s|", str);
+	printf("___end___\n");
 	return (0);
 }
