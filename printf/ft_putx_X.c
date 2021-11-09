@@ -1,28 +1,30 @@
 #include "ft_printf.h"
 
-void	ft_putbase(unsigned long long nb, char	*base, void *pt)
+static void	ft_putbase(unsigned long long nb, char	*base)
 {
-	if (pt != NULL && nb == 0)
-		nb = (unsigned long long)pt;
 	if (nb >= ft_strlen(base))
-		ft_putbase(nb / ft_strlen(base), base, pt);
+		ft_putbase(nb / ft_strlen(base), base);
 	write(1, &base[nb % ft_strlen(base)], 1);
 }
 
-size_t	putsize(unsigned long long nb, char *base, void *pt)
+int	ft_putsize(unsigned long long nb, char *base, void *pt)
 {
-	size_t	i;
+	int	i;
 
+	if (pt && nb == 0)
+		nb = (unsigned long long)pt;
 	i = 0;
-	ft_putbase(nb, base, pt);
-	while (nb != 0)
+	ft_putbase(nb, base);
+	if (nb == 0)
+		return (1);
+	while (nb)
 	{
 		nb /= ft_strlen(base);
 		i++;
 	}
 	return (i);
 }
-
+/*
 int main()
 {
 	int i = 1;
@@ -30,4 +32,4 @@ int main()
 	printf("ADR = %p\n", &i);
 	printf("LD = %ld\n", &i);
 	printf("X = %x\n", &i);
-}
+}*/

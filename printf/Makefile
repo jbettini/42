@@ -4,6 +4,7 @@ SRC			=	ft_printf.c \
 				ft_putc_s.c \
 				ft_putd_i.c \
 				ft_check_var.c \
+				ft_putx_X.c \
 
 OBJ		=	${SRC:.c=.o}
 
