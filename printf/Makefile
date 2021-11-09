@@ -1,10 +1,8 @@
 NAME		=	libftprintf.a
 
 SRC			=	ft_printf.c \
-				ft_strlen.c \
-				ft_putstr.c \
-				ft_putchar.c \
-				ft_putnb.c \
+				ft_putc_s.c \
+				ft_putd_i.c \
 				ft_check_var.c \
 
 OBJ		=	${SRC:.c=.o}

@@ -6,18 +6,18 @@ size_t ft_check_var(va_list ap , int n)
 	// udics%pxX
 	i = 0;
 	{
-		if (n == 'd' || n == 'i')
-			i += ft_putnb(va_arg(ap, int));
-			else if (n == 'c')
-				i += ft_putchar(va_arg(ap, int));
-			else if (n == 's')
-				i += ft_putstr(va_arg(ap, char *));
-			else if (n == '%')
-				i += ft_putchar('%');
-			/*else if (n == 'p')
-				i += ft_putptr(ap, unsigned int);
-			else if (n == 'x' || n == 'X')
-				i += ft_puthex(ap);*/
+		if (n == 'c')
+			i += ft_putc(va_arg(ap, int));
+		else if (n == 's')
+			i += ft_puts(va_arg(ap, char *));
+		else if (n == '%')
+			i += ft_putc('%');
+		else if (n == 'd' || n == 'i')
+			i += ft_puti(va_arg(ap, int));
+		/*else if (n == 'p')
+			i += ft_putptr(ap, unsigned int);
+		else if (n == 'x' || n == 'X')
+			i += ft_puthex(ap);*/
 	}
 	return (i);
 }
