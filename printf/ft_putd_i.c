@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putd_i.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmatthie <mmatthie@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/15 22:16:37 by mmatthie          #+#    #+#             */
+/*   Updated: 2021/11/15 22:19:08 by mmatthie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 size_t	ft_strlen(const char	*str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -17,7 +29,7 @@ char	*ft_strdup(const char	*s)
 	int		i;
 
 	size = ft_strlen(s);
-	str = (char*) malloc(sizeof(char) * size + 1);
+	str = (char *) malloc(sizeof(char) * size + 1);
 	if (str == NULL)
 		return (NULL);
 	i = 0;
@@ -32,8 +44,8 @@ char	*ft_strdup(const char	*s)
 
 static int	size_len(int n)
 {
-	int neg;
-	int res;
+	int	neg;
+	int	res;
 
 	neg = 0;
 	res = 0;
@@ -50,9 +62,9 @@ static int	size_len(int n)
 	return (res + neg);
 }
 
-int ft_puti(int nb)
+int	ft_puti(int nb)
 {
-	int i;
+	int		i;
 	char	*str;
 
 	i = 0;
@@ -64,8 +76,8 @@ int ft_puti(int nb)
 
 char	*ft_itoa(int n)
 {
-	int len;
-	int neg;
+	int		len;
+	int		neg;
 	char	*str;
 
 	if (n == -2147483648)

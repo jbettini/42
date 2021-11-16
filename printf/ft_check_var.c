@@ -1,31 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_var.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmatthie <mmatthie@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/15 22:23:59 by mmatthie          #+#    #+#             */
+/*   Updated: 2021/11/16 18:02:14 by mmatthie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-int ft_check_var(va_list ap , int n)
+int	ft_check_var(va_list ap, int n)
 {
-	int	i;
-	// udics%pxX
-	i = 0;
 	{
 		if (n == 'c')
-			i += ft_putc(va_arg(ap, int));
+			return (ft_putc(va_arg(ap, int)));
 		else if (n == 's')
-			i += ft_puts(va_arg(ap, char *));
+			return (ft_puts(va_arg(ap, char *)));
 		else if (n == '%')
-			i += ft_putc('%');
+			return (ft_putc('%'));
 		else if (n == 'd' || n == 'i')
-			i += ft_puti(va_arg(ap, int));
+			return (ft_puti(va_arg(ap, int)));
 		else if (n == 'p')
-		{
-			write(1, "0x", 2);
-			i += ft_putsize(0, "0123456789abcdef", (void *)va_arg(ap, const char *));
-			return (i + 2);
-		}
+			return (write(1, "0x", 2) + \
+			ft_putsize(0, "0123456789abcdef", (void *)va_arg(ap, char *)));
 		else if (n == 'u')
-			i += ft_putsize((unsigned long long)va_arg(ap, unsigned int), "0123456789", NULL);
+			return (ft_putsize((unsigned long long) \
+			va_arg(ap, unsigned int), "0123456789", NULL));
 		else if (n == 'x')
-			i += ft_putsize((unsigned long long)va_arg(ap, unsigned int), "0123456789abcdef", NULL);
+			return (ft_putsize((unsigned long long) \
+			va_arg(ap, unsigned int), "0123456789abcdef", NULL));
 		else if (n == 'X')
-			i += ft_putsize((unsigned long long)va_arg(ap, unsigned int), "0123456789ABCDEF", NULL);
+			return (ft_putsize((unsigned long long) \
+			va_arg(ap, unsigned int), "0123456789ABCDEF", NULL));
 	}
-	return (i);
+	return (1);
 }

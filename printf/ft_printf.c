@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmatthie <mmatthie@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/15 22:22:36 by mmatthie          #+#    #+#             */
+/*   Updated: 2021/11/15 22:23:45 by mmatthie         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 #include <stdarg.h>
 
 /*str[i] */
-int ft_printf(const char * str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	int		i;
@@ -10,7 +22,7 @@ int ft_printf(const char * str, ...)
 
 	i = 0;
 	j = 0;
-	va_start(ap, str); // initialise va_list va_arg -> renvoie a l'argument suivant |cspdiuxX|
+	va_start(ap, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
