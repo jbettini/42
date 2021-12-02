@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmatthie <mmatthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/01 19:17:47 by mmatthie          #+#    #+#             */
-/*   Updated: 2021/12/02 16:10:59 by mmatthie         ###   ########.fr       */
+/*   Created: 2021/12/02 16:11:15 by mmatthie          #+#    #+#             */
+/*   Updated: 2021/12/02 16:42:55 by mmatthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+# define FD_MAX 257
 
 # include <string.h>
 # include <sys/types.h>
