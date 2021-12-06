@@ -6,7 +6,7 @@
 /*   By: mmatthie <mmatthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 19:17:34 by mmatthie          #+#    #+#             */
-/*   Updated: 2021/12/01 19:20:46 by mmatthie         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:59:08 by mmatthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_makeline(char	*save)
 	if (!newline)
 		return (NULL);
 	i = -1;
-	while (save[++i])
+	while (save[++i] && save[i] != '\n')
 		newline[i] = save[i];
 	if (save[i] == '\n')
 	{
@@ -82,7 +82,7 @@ char	*ft_restline(char	*save)
 		if (!newline)
 			return (NULL);
 		while (save[i])
-			newline[j++] = save[i++];
+			newline[j++] = save[++i];
 		newline[j] = 0;
 		free (save);
 		return (newline);
