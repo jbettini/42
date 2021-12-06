@@ -54,7 +54,7 @@ char	*ft_makeline(char	*save)
 	if (!newline)
 		return (NULL);
 	i = -1;
-	while (save[++i] && save[i] != '\n')
+	while (save[++i])
 		newline[i] = save[i];
 	if (save[i] == '\n')
 	{
@@ -82,7 +82,7 @@ char	*ft_restline(char	*save)
 		if (!newline)
 			return (NULL);
 		while (save[i])
-			newline[j++] = save[++i];
+			newline[j++] = save[i++];
 		newline[j] = 0;
 		free (save);
 		return (newline);
