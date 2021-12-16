@@ -42,5 +42,5 @@ int ft_puti(int nb)
 
     i = ft_nblen(nb);
     j = ft_putnb(i);
-    return (j);
+    return (i);
 }
